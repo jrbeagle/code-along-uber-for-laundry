@@ -31,6 +31,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+const authRoutes = require('./routes/auth-routes.js');
+app.use('/', authRoutes);
 app.use('/', index);
 app.use('/users', users);
 
